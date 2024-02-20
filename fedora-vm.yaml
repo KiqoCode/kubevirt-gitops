@@ -11,6 +11,10 @@ spec:
       creationTimestamp: null
     spec:
       domain:
+        cpu:
+          cores: 2
+          sockets: 1
+          threads: 1
         devices:
           disks:
           - disk:
@@ -24,7 +28,6 @@ spec:
           type: pc-q35-rhel8.6.0
         resources:
           requests:
-            cpu: '2'
             memory: 4Gi
       terminationGracePeriodSeconds: 0
       volumes:
