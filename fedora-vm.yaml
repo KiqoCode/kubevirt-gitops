@@ -2,7 +2,7 @@ apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
   annotations:
-  name: fedora-cm-gitops
+  name: fedora-vm-gitops
   namespace: vmexamples
 spec:
   running: true
@@ -24,7 +24,8 @@ spec:
           type: pc-q35-rhel8.6.0
         resources:
           requests:
-            memory: 1024M
+            cpu: 2
+            memory: 4Gi
       terminationGracePeriodSeconds: 0
       volumes:
       - containerDisk:
