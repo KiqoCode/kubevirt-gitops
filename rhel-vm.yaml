@@ -34,9 +34,6 @@ spec:
           requests:
             memory: 2Gi
       evictionStrategy: LiveMigrate
-      networks:
-        - name: default
-          pod: {}
       terminationGracePeriodSeconds: 180
       volumes:
         - dataVolume:
