@@ -2,6 +2,7 @@ apiVersion: kubevirt.io/v1
 kind: VirtualMachineInstanceReplicaSet
 metadata:
   name: vmi-replicaset
+  namespace: vmexamples
 spec:
   replicas: 3
   selector:
