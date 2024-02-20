@@ -1,0 +1,28 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachineInstanceReplicaSet
+metadata:
+  name: vmi-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      kubevirt.io/vmReplicaSet: vmi-replicaset
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vmReplicaSet: vmi-replicaset
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: containerdisk
+        resources:
+          requests:
+            memory: 128Mi
+      terminationGracePeriodSeconds: 0
+      volumes:
+      - containerDisk:
+          image: quay.io/containerdisks/fedora:latest
+        name: containerdisk
