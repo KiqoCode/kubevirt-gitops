@@ -4,7 +4,7 @@ metadata:
   name: vm-pool
   namespace: vmexamples
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       kubevirt.io/vmpool: vm-pool
